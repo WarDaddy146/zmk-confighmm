@@ -1,0 +1,6 @@
+if SHIELD_HEILMARY
+
+config ZMK_KEYBOARD_NAME
+    default "heilmary"
+
+endif # SHIELD_HEILMARY
