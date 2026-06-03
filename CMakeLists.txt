@@ -1,0 +1,7 @@
+if (SHIELD)
+  list(FIND SHIELD "heilmary" _idx)
+  if (_idx GREATER -1)
+    zephyr_library()
+    zephyr_library_sources(src/oled_raw_hid.c)
+  endif()
+endif()
