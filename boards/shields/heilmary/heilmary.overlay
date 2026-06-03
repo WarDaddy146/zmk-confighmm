@@ -1,5 +1,21 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
+&pinctrl {
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 20)>,
+                <NRF_PSEL(TWIM_SCL, 0, 22)>;
+        };
+    };
+    i2c1_sleep: i2c1_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 20)>,
+                <NRF_PSEL(TWIM_SCL, 0, 22)>;
+            low-power-enable;
+        };
+    };
+};
+
 / {
     chosen {
         zmk,kscan = &kscan;
@@ -24,6 +40,7 @@
 &i2c1 {
     status = "okay";
     clock-frequency = <400000>;
-    sda-pin = <20>;
-    scl-pin = <22>;
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
 };
