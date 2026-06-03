@@ -21,7 +21,9 @@
     };
 };
 
-&pro_micro_i2c {
+&i2c1 {
     status = "okay";
     clock-frequency = <400000>;
+    sda-pin = <20>;
+    scl-pin = <22>;
 };

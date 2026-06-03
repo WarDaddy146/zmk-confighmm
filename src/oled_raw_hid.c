@@ -10,7 +10,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #define OLED_ADDR 0x3C
 #define FB_SIZE 512
 
-#define I2C_NODE DT_NODELABEL(pro_micro_i2c)
+#define I2C_NODE DT_NODELABEL(i2c1)
 
 static const struct device *i2c_dev;
 static uint8_t framebuffer[FB_SIZE];
