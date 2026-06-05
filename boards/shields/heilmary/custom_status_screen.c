@@ -26,8 +26,8 @@ lv_obj_t *zmk_display_status_screen(void)
     lv_canvas_set_buffer(canvas, canvas_buf, CANVAS_W, CANVAS_H, CANVAS_COLOR_FORMAT);
 
     /* Initialise palette for 1‑bit colour */
-    lv_canvas_set_palette(canvas, 0, lv_color_black());
-    lv_canvas_set_palette(canvas, 1, lv_color_white());
+    lv_canvas_set_palette(canvas, 0, lv_color_to_32(lv_color_black(), LV_OPA_COVER));
+    lv_canvas_set_palette(canvas, 1, lv_color_to_32(lv_color_white(), LV_OPA_COVER));
 
     /* Clear to black */
     lv_canvas_fill_bg(canvas, lv_color_black(), LV_OPA_COVER);
